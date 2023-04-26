@@ -20,6 +20,7 @@
 	aliases {
 		serial0 = &uart0;
 		serial1 = &uart1;
+		serial3 = &uart3;
 	};
 
 	chosen {
@@ -191,6 +192,14 @@
 	};
 
 };
+
+&uart3 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart3_pins>, <&uart3_rts_cts_pins>;
+	uart-has-rtscts;
+	status = "okay";
+};
+
 
 &pio {
 	gpio-line-names =
